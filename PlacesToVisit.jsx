@@ -4,7 +4,10 @@ import PlaceCardItem from "./PlaceCardItem";
 function PlacesToVisit({ trip }) {
   const placedata =
     trip?.tripData?.travelPlan?.itinerary ||
-    trip?.tripData?.trip?.itinerary;
+    trip?.tripData?.trip?.itinerary ||
+    trip?.tripData?.Itinerary ||
+    trip?.tripData?.travelPlan?.dailyItinerary ||
+    [];
 
   if (!Array.isArray(placedata)) {
     return (
